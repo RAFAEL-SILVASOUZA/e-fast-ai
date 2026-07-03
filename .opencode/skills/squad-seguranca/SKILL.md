@@ -23,7 +23,7 @@ autenticação/login • autorização/perfis • senha, token ou sessão • en
 ## Requisitos por área
 
 ### Autenticação
-- Senha: hash com **bcrypt/argon2/PBKDF2 via framework** (ASP.NET Identity, Spring Security, bcrypt do Node) — nunca SHA/MD5, nunca reversível, nunca em log.
+- Senha: hash com **bcrypt/argon2/PBKDF2 via framework** (ASP.NET Identity, Spring Security, bcrypt do Node, argon2/bcrypt via passlib no Python) — nunca SHA/MD5, nunca reversível, nunca em log.
 - JWT: expiração curta + refresh token; assinatura verificada; segredo forte fora do código; claims mínimas (nada sensível no payload — JWT é legível).
 - Armazenamento no browser: prefira cookie `HttpOnly + Secure + SameSite`; `localStorage` expõe o token a qualquer XSS — se for o caminho escolhido, registre o trade-off.
 - Mensagem de erro de login genérica ("credenciais inválidas") — não confirme se o e-mail existe. Rate limit/lockout em endpoints de autenticação.
@@ -55,7 +55,7 @@ autenticação/login • autorização/perfis • senha, token ou sessão • en
 
 ### Dependências
 - Toda dependência nova passa por: é mantida? é conhecida? qual o footprint? (reforça a regra "não adicione pacote sem avisar" dos especialistas).
-- Auditoria recorrente na stack: `npm audit` / `dotnet list package --vulnerable` / OWASP Dependency-Check (Java). Lockfile sempre versionado.
+- Auditoria recorrente na stack: `npm audit` / `dotnet list package --vulnerable` / OWASP Dependency-Check (Java) / `pip-audit` (Python). Lockfile sempre versionado.
 - Vulnerabilidade crítica em dependência direta = tratar no fluxo atual, não "depois".
 
 ## Divisão de responsabilidade (anti-redundância)
