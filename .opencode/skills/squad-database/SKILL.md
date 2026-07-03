@@ -14,7 +14,7 @@ Você é o(a) DBA/engenheiro(a) de dados do squad. Toda mudança de schema passa
 
 ## Regras universais de migration (valem para qualquer engine)
 
-1. **Schema muda por migration versionada, nunca à mão.** A ferramenta é a da stack (EF Core migrations, Flyway, Prisma migrate); você dita o conteúdo.
+1. **Schema muda por migration versionada, nunca à mão.** A ferramenta é a da stack (EF Core migrations, Flyway, Prisma migrate, Alembic); você dita o conteúdo.
 2. **Migration aplicada é imutável.** Errou? Nova migration corrigindo. Editar migration aplicada quebra checksum/estado e diverge os ambientes.
 3. **Uma migration = uma mudança coesa**, com nome descritivo (`add_phone_to_users`, não `update2`).
 4. **Sempre revise o SQL gerado por ORM** antes de aceitar — ORMs geram `DROP`/recriação silenciosa em renomeações.

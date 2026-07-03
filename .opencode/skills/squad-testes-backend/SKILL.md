@@ -1,11 +1,11 @@
 ---
 name: squad-testes-backend
-description: Especialista em testes de backend do squad — estratégia, profundidade e qualidade dos testes (unidade, integração, dados de teste, mocks). Use sempre que for escrever ou revisar testes de backend em qualquer stack (C#, Java, Node), quando o usuário mencionar teste, cobertura, mock, TDD ou teste de integração no servidor, e quando testes existentes quebrarem ou estiverem flaky. As skills de backend cuidam das ferramentas; esta cuida de COMO testar bem.
+description: Especialista em testes de backend do squad — estratégia, profundidade e qualidade dos testes (unidade, integração, dados de teste, mocks). Use sempre que for escrever ou revisar testes de backend em qualquer stack (C#, Java, Node, Python), quando o usuário mencionar teste, cobertura, mock, TDD ou teste de integração no servidor, e quando testes existentes quebrarem ou estiverem flaky. As skills de backend cuidam das ferramentas; esta cuida de COMO testar bem.
 ---
 
 # Squad — Testes de Backend
 
-Você é o(a) especialista em testes de backend do squad. As skills de stack (`squad-backend-*`) dizem **com o quê** testar (xUnit, JUnit, Vitest, Testcontainers); esta skill diz **o que, quanto e como**. Princípios base (3 Leis do TDD, F.I.R.S.T., AAA) estão em `../squad/references/clean-code.md` — não os repita, aplique-os.
+Você é o(a) especialista em testes de backend do squad. As skills de stack (`squad-backend-*`) dizem **com o quê** testar (xUnit, JUnit, Vitest, pytest, Testcontainers); esta skill diz **o que, quanto e como**. Princípios base (3 Leis do TDD, F.I.R.S.T., AAA) estão em `../squad/references/clean-code.md` — não os repita, aplique-os.
 
 ## Estratégia: a pirâmide na prática
 

@@ -1,6 +1,6 @@
 # Squad Skills — um squad inteiro no seu projeto
 
-Coleção de 15 skills para agentes de código (Claude Code, opencode e compatíveis com o padrão Agent Skills) que transforma qualquer projeto — vazio ou existente — em um projeto atendido por um squad virtual completo: arquitetura, backend, frontend, banco de dados, segurança, testes, Docker e Git, com fluxo de trabalho de ponta a ponta e restrições de qualidade invioláveis.
+Coleção de 16 skills para agentes de código (Claude Code, opencode e compatíveis com o padrão Agent Skills) que transforma qualquer projeto — vazio ou existente — em um projeto atendido por um squad virtual completo: arquitetura, backend, frontend, banco de dados, segurança, testes, Docker e Git, com fluxo de trabalho de ponta a ponta e restrições de qualidade invioláveis.
 
 ## Instalação
 
@@ -28,6 +28,7 @@ Só skills, sem agentes ou configuração extra — tudo roda no agente da sua c
 | `squad-backend-csharp` | C# / .NET / EF Core / xUnit |
 | `squad-backend-java` | Java / Spring Boot / JPA / Flyway / JUnit |
 | `squad-backend-node` | Node / TypeScript / NestJS-Fastify / Prisma / Vitest |
+| `squad-backend-python` | Python / FastAPI-Django / SQLAlchemy / Alembic / pytest |
 | `squad-frontend-react` | React / TanStack Query / React Hook Form / Testing Library |
 | `squad-frontend-angular` | Angular / standalone / signals / Reactive Forms |
 | `squad-database` | Postgres, Oracle, SQL Server e MongoDB (uma skill, referência por engine) |
