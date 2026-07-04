@@ -47,7 +47,7 @@ Exemplo-guia (generalize): *adicionar propriedade a uma entidade existente*.
 ## Comandos úteis
 
 ```bash
-mvn spring-boot:run
+mvn spring-boot:run                     # SÓ em background — ver restrição "Teste Vivo"
 mvn verify                              # build + testes
 mvn spring-boot:test-run               # com Testcontainers
 ./mvnw flyway:info                      # estado das migrations (se plugin configurado)
@@ -62,3 +62,4 @@ mvn spring-boot:test-run               # com Testcontainers
 5. **Não adicione dependência no pom/gradle sem avisar** o usuário do que é e por quê.
 6. **Teste acompanha o código no mesmo fluxo.**
 7. Decisões de modelagem de banco (tipos, índices, defaults) seguem a `squad-database`; você escreve a migration, ela dita as regras.
+8. **Teste Vivo: não é permitido rodar o serviço a não ser em background.** `mvn spring-boot:run`/`java -jar` em foreground não terminam sozinhos e travam a sessão. Para verificar a API de pé: suba em segundo plano (mecanismo do harness ou `Start-Process`/`nohup`) guardando o PID e o log em arquivo, verifique com tentativas limitadas (curl a cada ~2s, máx. ~15) e **mate o processo ao final, sucesso ou falha** — processo órfão ocupa a porta e quebra a próxima execução. Receita completa: seção "Teste Vivo" da skill `squad`. Prefira testes de integração (`@SpringBootTest`/Testcontainers sobem e derrubam o host sozinhos) a levantar servidor manualmente.

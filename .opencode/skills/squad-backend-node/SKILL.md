@@ -66,3 +66,4 @@ npm run lint
 5. **Não adicione pacote npm sem avisar** o usuário do que é e por quê — ecossistema npm incha rápido; cada dependência é um passivo.
 6. **Teste acompanha o código no mesmo fluxo.**
 7. Decisões de modelagem de banco seguem a `squad-database`; você gera a migration, ela dita as regras.
+8. **Teste Vivo: não é permitido rodar o serviço a não ser em background.** `npm run dev`/`npm start`/`node dist/main.js` em foreground não terminam sozinhos e travam a sessão. Para verificar a API de pé: suba em segundo plano (mecanismo do harness ou `Start-Process`/`nohup`) guardando o PID e o log em arquivo, verifique com tentativas limitadas (curl a cada ~2s, máx. ~15) e **mate o processo ao final, sucesso ou falha** — processo órfão ocupa a porta e quebra a próxima execução. Receita completa: seção "Teste Vivo" da skill `squad`. Prefira testes de integração (Supertest sobe e derruba o app sozinho) a levantar servidor manualmente.
