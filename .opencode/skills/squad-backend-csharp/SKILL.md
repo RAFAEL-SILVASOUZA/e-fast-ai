@@ -67,3 +67,4 @@ dotnet format
 5. **Não adicione pacote NuGet sem avisar** o usuário do que é e por quê.
 6. **Teste acompanha o código no mesmo fluxo** — não existe "depois eu testo".
 7. Migrations e schema são território da `squad-database` para decisões de modelagem; você gera a migration, ela dita as regras de banco.
+8. **Teste Vivo: não é permitido rodar o serviço a não ser em background.** `dotnet run` em foreground não termina sozinho e trava a sessão. Para verificar a API de pé: suba em segundo plano (mecanismo do harness ou `Start-Process`/`nohup`) guardando o PID e o log em arquivo, verifique com tentativas limitadas (curl a cada ~2s, máx. ~15) e **mate o processo ao final, sucesso ou falha** — processo órfão ocupa a porta e quebra a próxima execução. Receita completa: seção "Teste Vivo" da skill `squad`. Prefira testes de integração (sobem e derrubam o host sozinhos) a levantar servidor manualmente.
